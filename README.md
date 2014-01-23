@@ -1,4 +1,4 @@
-# TEAM Data Processing Tools (R)
+# lspathrow
 
 [![Build Status](https://travis-ci.org/azvoleff/lspathrow.png)](https://travis-ci.org/azvoleff/lspathrow)
 
