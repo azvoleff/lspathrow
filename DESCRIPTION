@@ -5,12 +5,16 @@ Authors@R: c(person("Alex", "Zvoleff", email="azvoleff@conservation.org",
     role=c("aut", "cre")))
 Maintainer: Alex Zvoleff <azvoleff@conservation.org>
 Depends:
-    R (>= 2.10.0),
-    rgdal
+    R (>= 2.10.0)
 Imports:
-    raster,
-    sp,
-    rgdal
+    sp
+Suggests:
+    teamr
+Description: Contains the World Reference System (WRS) 1 and 2 polygon datasets
+    from NASA. WRS-1 applies to Landsat 1-3, WRS-2 applies to Landsat 4-8. The
+    package has function for retrieving a polygon covering a given path and
+    row, and for retrieving the path(a) and row(s) containing a given raster or
+    vector.
 License: GPL (>= 3)
 URL: https://github.com/azvoleff/lspathrow
 BugReports: https://github.com/azvoleff/teamr/lspathrow
