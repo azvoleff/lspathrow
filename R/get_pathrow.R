@@ -2,6 +2,7 @@
 #'
 #' @export
 #' @docType methods
+#' @import methods
 #' @rdname get_pathrow-methods
 #' @param x a spatial object
 #' @return list with path and row as integers
