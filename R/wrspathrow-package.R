@@ -1,6 +1,6 @@
-#' lspathrow
+#' wrspathrow
 #'
-#' @name lspathrow
+#' @name wrspathrow
 #' @docType package
 NULL
 #' Worldwide Reference System - 1 (WRS1) SpatialPolygonsDataFrame
