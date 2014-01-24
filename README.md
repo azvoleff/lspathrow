@@ -6,8 +6,9 @@
 
 The `wrspathrow` package includes the full Worldwide Reference System (WRS) 1 
 and WRS 2 grids used by NASA for cataloging Landsat scenes. The package allows 
-fetching the path and row numbers for a given spatial object, or conversely, to 
-fetch a SpatialPolygonsDataFrame of a given path and row.
+fetching the path and row numbers for a given spatial object, or conversely,
+allows fetching a SpatialPolygonsDataFrame of the area covered by a given path
+and row.
 
 ## Package Installation
 
