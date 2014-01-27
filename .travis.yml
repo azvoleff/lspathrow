@@ -11,7 +11,7 @@ before_install:
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
     # wrspathrow R depends
-  - ./travis-tool.sh install_r_binary sp
+  - ./travis-tool.sh install_r_binary sp raster rgeos
 
 install:
   - ./travis-tool.sh install_deps
