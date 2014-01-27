@@ -9,8 +9,8 @@
 #' (nighttime)
 #' @return list with path and row as integers
 #' @examples
-#' pathrow_poly(15, 53)
-pathrow_poly <- function(wrs_path, wrs_row, wrs_type='2', wrs_mode='D') {
+#' get_pathrow_poly(15, 53)
+get_pathrow_poly <- function(wrs_path, wrs_row, wrs_type='2', wrs_mode='D') {
     if (wrs_type == 2) {
         wrs_polys <- wrs2_asc_desc
         if (wrs_path < 1 || wrs_path > 233) {

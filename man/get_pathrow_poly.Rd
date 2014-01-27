@@ -1,8 +1,8 @@
-\name{pathrow_poly}
-\alias{pathrow_poly}
+\name{get_pathrow_poly}
+\alias{get_pathrow_poly}
 \title{Get a polgon giving area of coverage of a given WRS-1 or WRS-2 path and row}
 \usage{
-pathrow_poly(wrs_path, wrs_row, wrs_type = "2", wrs_mode = "D")
+get_pathrow_poly(wrs_path, wrs_row, wrs_type = "2", wrs_mode = "D")
 }
 \arguments{
   \item{wrs_path}{WRS-1 or WRS-2 path as an integer}
@@ -22,6 +22,6 @@ Get a polgon giving area of coverage of a given WRS-1 or
 WRS-2 path and row
 }
 \examples{
-pathrow_poly(15, 53)
+get_pathrow_poly(15, 53)
 }
 
