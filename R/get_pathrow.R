@@ -5,10 +5,16 @@
 #' @import methods
 #' @rdname get_pathrow-methods
 #' @param x a spatial object
-#' @return list with path and row as integers
+#' @param wrs_type 1 (for WRS-1) or 2 (for WRS-2)
+#' @param wrs_mode either 'D' for descending (daytime) or 'A' for ascending 
+#' @param as_polys if FALSE (default) return a data.frame. If TRUE, return a 
+#' \code{SpatialPolygonsDataFrame}.
+#' @return data.frame with path and row as integers, or, if as_polys=TRUE, a 
+#' \code{SpatialPolygonsDataFrame}
 #' @examples
 #' #TODO: add examples
-setGeneric("get_pathrow", function(x, wrs_type='2', wrs_mode='D', as_polys=FALSE) {
+setGeneric("get_pathrow", function(x, wrs_type='2', wrs_mode='D', 
+                                   as_polys=FALSE) {
     standardGeneric("get_pathrow")
 })
 

@@ -13,9 +13,18 @@ get_pathrow(x, wrs_type = "2", wrs_mode = "D", as_polys = FALSE)
 }
 \arguments{
   \item{x}{a spatial object}
+
+  \item{wrs_type}{1 (for WRS-1) or 2 (for WRS-2)}
+
+  \item{wrs_mode}{either 'D' for descending (daytime) or
+  'A' for ascending}
+
+  \item{as_polys}{if FALSE (default) return a data.frame.
+  If TRUE, return a \code{SpatialPolygonsDataFrame}.}
 }
 \value{
-list with path and row as integers
+data.frame with path and row as integers, or, if
+as_polys=TRUE, a \code{SpatialPolygonsDataFrame}
 }
 \description{
 Get WRS-2 path/row for a given spatial object
