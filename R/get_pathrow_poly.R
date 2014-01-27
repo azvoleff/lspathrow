@@ -1,7 +1,6 @@
 #' Get a polgon giving area of coverage of a given WRS-1 or WRS-2 path and row
 #'
 #' @export
-#' @import sp
 #' @param wrs_path WRS-1 or WRS-2 path as an integer
 #' @param wrs_row WRS-1 or WRS-2 row as an integer
 #' @param wrs_type 1 (for WRS-1) or 2 (for WRS-2)
