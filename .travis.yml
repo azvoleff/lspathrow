@@ -12,6 +12,7 @@ before_install:
   - ./travis-tool.sh bootstrap
     # wrspathrow R depends
   - ./travis-tool.sh install_r_binary sp raster rgeos
+  - ./travis-tool.sh install_github azvoleff/wrspathrowData
 
 install:
   - ./travis-tool.sh install_deps

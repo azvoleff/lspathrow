@@ -3,21 +3,9 @@
 #' @name wrspathrow
 #' @docType package
 NULL
-#' Worldwide Reference System - 1 (WRS1) SpatialPolygonsDataFrame
-#' 
-#' Contains polygons of the area of each path and row for the ascending and 
-#' descending nodes of the WRS1 system.
-#'
-#' @docType data
-#' @name wrs1_asc_desc
-#' @seealso wrs2_asc_desc
-NULL
-#' Worldwide Reference System - 2 (WRS2) SpatialPolygonsDataFrame
-#' 
-#' Contains polygons of the area of each path and row for the ascending and 
-#' descending nodes of the WRS2 system.
-#'
-#' @docType data
-#' @name wrs2_asc_desc
-#' @seealso wrs1_asc_desc
-NULL
+.onLoad <- function(libname, pkgname) {
+    load(system.file("data", "wrs1_asc_desc.RData", package="wrspathrowData"), 
+         envir=parent.env(environment()))
+    load(system.file("data", "wrs2_asc_desc.RData", package="wrspathrowData"),
+         envir=parent.env(environment()))
+}
