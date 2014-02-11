@@ -48,11 +48,13 @@ setGeneric("get_pathrow_num", function(x, wrs_type='2', wrs_mode='D',
 })
 
 #' @rdname get_pathrow_num-methods
-#' @import raster
 #' @importFrom rgeos gIntersects
 #' @aliases get_pathrow_num,Raster-method
 setMethod("get_pathrow_num", signature(x="Raster"),
     function(x, wrs_type, wrs_mode, as_polys) {
+        if (!require(raster)) {
+            stop('"raster" package is required for handling Raster* objects')
+        }
         wrs_polys <- load_wrs_data(wrs_type, wrs_mode)
 
         x_wgs84 <- projectExtent(x, crs=crs(wrs_polys))
@@ -64,11 +66,13 @@ setMethod("get_pathrow_num", signature(x="Raster"),
 )
 
 #' @rdname get_pathrow_num-methods
-#' @importFrom sp Spatial spTransform proj4string CRS
 #' @importFrom rgeos gIntersects
 #' @aliases get_pathrow_num,Spatial-method
 setMethod("get_pathrow_num", signature(x="Spatial"),
     function(x, wrs_type, wrs_mode, as_polys) {
+        if (!require(sp)) {
+            stop('"sp" package is required for handling Spatial objects')
+        }
         wrs_polys <- load_wrs_data(wrs_type, wrs_mode)
 
         x_wgs84 <- spTransform(x, CRS(proj4string(wrs_polys)))
