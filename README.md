@@ -16,7 +16,7 @@ contains the WRS-1 and WRS-2 grids) is required by the `wrspathrow` package.
 
 The easiest way to install the development version of the package is to 
 download it directly from GitHub (within R) using the 
-[devtools](http://cran.r-project.org/web/packages/devtools/index.html) package 
+[`devtools`](http://cran.r-project.org/web/packages/devtools/index.html) package 
 by Hadley Wickham. After installing `devtools` from CRAN, type:
 
 ```R
