@@ -26,13 +26,13 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
     }
 }
 
-#' Get WRS-2 path/row for a given spatial object
+#' Get WRS-2 path/row numbers for a given spatial object
 #'
 #' @export
 #' @docType methods
 #' @import methods
 #' @import wrspathrowData
-#' @rdname get_pathrow-methods
+#' @rdname get_pathrow_num-methods
 #' @param x a spatial object
 #' @param wrs_type 1 (for WRS-1) or 2 (for WRS-2)
 #' @param wrs_mode either 'D' for descending (daytime) or 'A' for ascending 
@@ -42,16 +42,16 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
 #' \code{SpatialPolygonsDataFrame}
 #' @examples
 #' #TODO: add examples
-setGeneric("get_pathrow", function(x, wrs_type='2', wrs_mode='D', 
+setGeneric("get_pathrow_num", function(x, wrs_type='2', wrs_mode='D', 
                                    as_polys=FALSE) {
-    standardGeneric("get_pathrow")
+    standardGeneric("get_pathrow_num")
 })
 
-#' @rdname get_pathrow-methods
+#' @rdname get_pathrow_num-methods
 #' @import raster
 #' @importFrom rgeos gIntersects
-#' @aliases get_pathrow,Raster-method
-setMethod("get_pathrow", signature(x="Raster"),
+#' @aliases get_pathrow_num,Raster-method
+setMethod("get_pathrow_num", signature(x="Raster"),
     function(x, wrs_type, wrs_mode, as_polys) {
         wrs_polys <- load_wrs_data(wrs_type, wrs_mode)
 
@@ -63,11 +63,11 @@ setMethod("get_pathrow", signature(x="Raster"),
     }
 )
 
-#' @rdname get_pathrow-methods
+#' @rdname get_pathrow_num-methods
 #' @importFrom sp Spatial spTransform proj4string CRS
 #' @importFrom rgeos gIntersects
-#' @aliases get_pathrow,Spatial-method
-setMethod("get_pathrow", signature(x="Spatial"),
+#' @aliases get_pathrow_num,Spatial-method
+setMethod("get_pathrow_num", signature(x="Spatial"),
     function(x, wrs_type, wrs_mode, as_polys) {
         wrs_polys <- load_wrs_data(wrs_type, wrs_mode)
 

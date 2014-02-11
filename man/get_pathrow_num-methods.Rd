@@ -1,15 +1,15 @@
 \docType{methods}
-\name{get_pathrow}
-\alias{get_pathrow}
-\alias{get_pathrow,Raster-method}
-\alias{get_pathrow,Spatial-method}
-\title{Get WRS-2 path/row for a given spatial object}
+\name{get_pathrow_num}
+\alias{get_pathrow_num}
+\alias{get_pathrow_num,Raster-method}
+\alias{get_pathrow_num,Spatial-method}
+\title{Get WRS-2 path/row numbers for a given spatial object}
 \usage{
-get_pathrow(x, wrs_type = "2", wrs_mode = "D", as_polys = FALSE)
+get_pathrow_num(x, wrs_type = "2", wrs_mode = "D", as_polys = FALSE)
 
-\S4method{get_pathrow}{Raster}(x, wrs_type, wrs_mode, as_polys)
+\S4method{get_pathrow_num}{Raster}(x, wrs_type, wrs_mode, as_polys)
 
-\S4method{get_pathrow}{Spatial}(x, wrs_type, wrs_mode, as_polys)
+\S4method{get_pathrow_num}{Spatial}(x, wrs_type, wrs_mode, as_polys)
 }
 \arguments{
   \item{x}{a spatial object}
@@ -27,7 +27,7 @@ data.frame with path and row as integers, or, if
 as_polys=TRUE, a \code{SpatialPolygonsDataFrame}
 }
 \description{
-Get WRS-2 path/row for a given spatial object
+Get WRS-2 path/row numbers for a given spatial object
 }
 \examples{
 #TODO: add examples

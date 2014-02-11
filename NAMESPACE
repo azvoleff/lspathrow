@@ -1,4 +1,4 @@
-export(get_pathrow)
+export(get_pathrow_num)
 export(get_pathrow_poly)
 import(methods)
 import(raster)
