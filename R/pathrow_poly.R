@@ -9,8 +9,11 @@
 #' (nighttime)
 #' @return list with path and row as integers
 #' @examples
-#' get_pathrow_poly(15, 53)
-get_pathrow_poly <- function(wrs_path, wrs_row, wrs_type='2', wrs_mode='D') {
+#' library(sp)
+#'
+#' x <- pathrow_poly(225, 61)
+#' plot(x)
+pathrow_poly <- function(wrs_path, wrs_row, wrs_type='2', wrs_mode='D') {
     if (wrs_type == 2) {
         if (wrs_path < 1 || wrs_path > 233) {
             stop('WRS-2 paths range from 1 to 233')

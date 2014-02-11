@@ -32,7 +32,7 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
 #' @docType methods
 #' @import methods
 #' @import wrspathrowData
-#' @rdname get_pathrow_num-methods
+#' @rdname pathrow_num-methods
 #' @param x a spatial object
 #' @param wrs_type 1 (for WRS-1) or 2 (for WRS-2)
 #' @param wrs_mode either 'D' for descending (daytime) or 'A' for ascending 
@@ -41,42 +41,41 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
 #' @return data.frame with path and row as integers, or, if as_polys=TRUE, a 
 #' \code{SpatialPolygonsDataFrame}
 #' @examples
-#' #TODO: add examples
-setGeneric("get_pathrow_num", function(x, wrs_type='2', wrs_mode='D', 
+#' library(sp)
+#'
+#' pathrow_num(test_poly)
+#'
+#' x <- pathrow_num(test_poly, as_polys=TRUE)
+#' plot(x)
+#' plot(test_poly, add=TRUE, lty=2, col="#00ff0050")
+#' text(coordinates(x), labels=paste(x$PATH, x$ROW, sep=', '))
+setGeneric("pathrow_num", function(x, wrs_type='2', wrs_mode='D', 
                                    as_polys=FALSE) {
-    standardGeneric("get_pathrow_num")
+    standardGeneric("pathrow_num")
 })
 
-#' @rdname get_pathrow_num-methods
+#' @rdname pathrow_num-methods
+#' @importFrom raster extent projectExtent crs
 #' @importFrom rgeos gIntersects
-#' @aliases get_pathrow_num,Raster-method
-setMethod("get_pathrow_num", signature(x="Raster"),
+#' @aliases pathrow_num,Raster-method
+setMethod("pathrow_num", signature(x="Raster"),
     function(x, wrs_type, wrs_mode, as_polys) {
-        if (!require(raster)) {
-            stop('"raster" package is required for handling Raster* objects')
-        }
         wrs_polys <- load_wrs_data(wrs_type, wrs_mode)
-
         x_wgs84 <- projectExtent(x, crs=crs(wrs_polys))
         x_wgs84_sp <- as(extent(x_wgs84), 'SpatialPolygons')
-        crs(x_wgs84_sp) <- crs(wrs_polys)
-
         return(intersect_wrs_polys(wrs_polys, x_wgs84_sp, as_polys))
     }
 )
 
-#' @rdname get_pathrow_num-methods
+#' @rdname pathrow_num-methods
 #' @importFrom rgeos gIntersects
-#' @aliases get_pathrow_num,Spatial-method
-setMethod("get_pathrow_num", signature(x="Spatial"),
+#' @importFrom sp CRS proj4string spTransform
+#' @import rgdal
+#' @aliases pathrow_num,Spatial-method
+setMethod("pathrow_num", signature(x="Spatial"),
     function(x, wrs_type, wrs_mode, as_polys) {
-        if (!require(sp)) {
-            stop('"sp" package is required for handling Spatial objects')
-        }
         wrs_polys <- load_wrs_data(wrs_type, wrs_mode)
-
         x_wgs84 <- spTransform(x, CRS(proj4string(wrs_polys)))
-
         return(intersect_wrs_polys(wrs_polys, x_wgs84, as_polys))
     }
 )
