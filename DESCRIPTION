@@ -1,6 +1,6 @@
 Package: wrspathrow
 Version: 0.1
-Date: 2014-02-10
+Date: 2014-02-12
 Title: Functions for working with Worldwide Reference System (WRS)
 Authors@R: c(person("Alex", "Zvoleff", email="azvoleff@conservation.org",
     role=c("aut", "cre")))
