@@ -30,6 +30,7 @@ as_polys=TRUE, a \code{SpatialPolygonsDataFrame}
 Get WRS-2 path/row numbers for a given spatial object
 }
 \examples{
+\dontrun{
 library(sp)
 
 pathrow_num(test_poly)
@@ -38,5 +39,6 @@ x <- pathrow_num(test_poly, as_polys=TRUE)
 plot(x)
 plot(test_poly, add=TRUE, lty=2, col="#00ff0050")
 text(coordinates(x), labels=paste(x$PATH, x$ROW, sep=', '))
+}
 }
 

@@ -41,6 +41,7 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
 #' @return data.frame with path and row as integers, or, if as_polys=TRUE, a 
 #' \code{SpatialPolygonsDataFrame}
 #' @examples
+#' \dontrun{
 #' library(sp)
 #'
 #' pathrow_num(test_poly)
@@ -49,6 +50,7 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
 #' plot(x)
 #' plot(test_poly, add=TRUE, lty=2, col="#00ff0050")
 #' text(coordinates(x), labels=paste(x$PATH, x$ROW, sep=', '))
+#' }
 setGeneric("pathrow_num", function(x, wrs_type='2', wrs_mode='D', 
                                    as_polys=FALSE) {
     standardGeneric("pathrow_num")
