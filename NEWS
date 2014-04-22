@@ -1,11 +1,16 @@
 wrspathrow 0.2
 ==============
 
-*  Fix bugreports link in README.md.
+* Add gUnaryUnion call to pathrow_num to avoid failure when x is a 
+  SpatialPolygonsDataFrame with > 1 polygon.
 
-*  Add NEWS file.
+* Fix bugreports link in README.md.
+
+* Various doc fixes.
+
+* Add NEWS file.
 
 wrspathrow 0.1
 ==============
 
-*  Initial release to CRAN.
+* Initial release to CRAN.
