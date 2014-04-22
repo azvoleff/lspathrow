@@ -12,8 +12,9 @@ load_wrs_data <- function(wrs_type, wrs_mode) {
     return(wrs_polys[wrs_polys@data$MODE %in% wrs_mode, ])
 }
 
+#' @importFrom rgeos gIntersects gUnaryUnion
 intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
-    intersecting <- as.logical(gIntersects(wrs_polys, x, byid=TRUE))
+    intersecting <- as.logical(gIntersects(wrs_polys, gUnaryUnion(x), byid=TRUE))
     if (sum(intersecting) == 0) {
         stop('no intersecting pathrows found')
     } else {

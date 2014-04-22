@@ -1,4 +1,4 @@
-#' Get a polgon giving area of coverage of a given WRS-1 or WRS-2 path and row
+#' Get a polygon giving area of coverage of a given WRS-1 or WRS-2 path and row
 #'
 #' @export
 #' @import wrspathrowData
@@ -7,7 +7,7 @@
 #' @param wrs_type 1 (for WRS-1) or 2 (for WRS-2)
 #' @param wrs_mode either 'D' for descending (daytime) or 'A' for ascending 
 #' (nighttime)
-#' @return list with path and row as integers
+#' @return \code{SpatialPolygonsDataFrame} with path and row polygon
 #' @examples
 #' library(sp)
 #'

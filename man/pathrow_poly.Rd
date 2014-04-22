@@ -1,6 +1,6 @@
 \name{pathrow_poly}
 \alias{pathrow_poly}
-\title{Get a polgon giving area of coverage of a given WRS-1 or WRS-2 path and row}
+\title{Get a polygon giving area of coverage of a given WRS-1 or WRS-2 path and row}
 \usage{
 pathrow_poly(wrs_path, wrs_row, wrs_type = "2", wrs_mode = "D")
 }
@@ -15,10 +15,10 @@ pathrow_poly(wrs_path, wrs_row, wrs_type = "2", wrs_mode = "D")
   'A' for ascending (nighttime)}
 }
 \value{
-list with path and row as integers
+\code{SpatialPolygonsDataFrame} with path and row polygon
 }
 \description{
-Get a polgon giving area of coverage of a given WRS-1 or
+Get a polygon giving area of coverage of a given WRS-1 or
 WRS-2 path and row
 }
 \examples{
