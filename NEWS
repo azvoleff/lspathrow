@@ -10,6 +10,8 @@ wrspathrow 0.2
 
 * Add NEWS file.
 
+* Upgrade to roxygen2 > 4.0.0
+
 wrspathrow 0.1
 ==============
 
