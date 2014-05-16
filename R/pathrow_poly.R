@@ -33,4 +33,3 @@ pathrow_poly <- function(wrs_path, wrs_row, wrs_type='2', wrs_mode='D') {
     return(wrs_polys[wrs_polys@data$PATH == wrs_path &
                      wrs_polys@data$ROW == wrs_row, ])
 }
-

@@ -29,11 +29,9 @@ intersect_wrs_polys <- function(wrs_polys, x, as_polys) {
 
 #' Get WRS-2 path/row numbers for a given spatial object
 #'
-#' @export
-#' @docType methods
+#' @export pathrow_num
 #' @import methods
 #' @import wrspathrowData
-#' @rdname pathrow_num-methods
 #' @param x a spatial object
 #' @param wrs_type 1 (for WRS-1) or 2 (for WRS-2)
 #' @param wrs_mode either 'D' for descending (daytime) or 'A' for ascending 
@@ -57,7 +55,6 @@ setGeneric("pathrow_num", function(x, wrs_type='2', wrs_mode='D',
     standardGeneric("pathrow_num")
 })
 
-#' @rdname pathrow_num-methods
 #' @importFrom raster extent projectExtent crs
 #' @importFrom rgeos gIntersects
 #' @aliases pathrow_num,Raster-method
@@ -70,7 +67,6 @@ setMethod("pathrow_num", signature(x="Raster"),
     }
 )
 
-#' @rdname pathrow_num-methods
 #' @importFrom rgeos gIntersects
 #' @importFrom sp CRS proj4string spTransform
 #' @import rgdal
